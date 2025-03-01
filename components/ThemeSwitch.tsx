@@ -1,26 +1,8 @@
 'use client'
-import { AnimatedBackground } from '@/components/ui/animated-background'
-import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
-
-const THEMES_OPTIONS = [
-  {
-    label: 'Light',
-    id: 'light',
-    icon: <SunIcon className="h-4 w-4" />,
-  },
-  {
-    label: 'Dark',
-    id: 'dark',
-    icon: <MoonIcon className="h-4 w-4" />,
-  },
-  {
-    label: 'System',
-    id: 'system',
-    icon: <MonitorIcon className="h-4 w-4" />,
-  },
-]
+import { Circle } from 'lucide-react'
+import { Button } from './ui/button'
 
 export function ThemeSwitch() {
   const [mounted, setMounted] = useState(false)
@@ -28,39 +10,29 @@ export function ThemeSwitch() {
 
   useEffect(() => {
     setMounted(true)
-  }, [])
+    // Set dark as default if no theme is selected
+    if (!theme) {
+      setTheme('dark')
+    }
+  }, [theme, setTheme])
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
 
   if (!mounted) {
     return null
   }
 
   return (
-    <AnimatedBackground
-      className="bg-card-custom pointer-events-none rounded-lg"
-      defaultValue={theme}
-      transition={{
-        type: 'spring',
-        bounce: 0,
-        duration: 0.2,
-      }}
-      enableHover={false}
-      onValueChange={(id) => {
-        setTheme(id as string)
-      }}
+    <button
+      aria-label="Toggle theme"
+      onClick={toggleTheme}
+      className="bg-background hover:bg-muted h-8 rounded-md px-4 py-0.5 transition-colors duration-200 md:h-5 md:px-2"
     >
-      {THEMES_OPTIONS.map((theme) => {
-        return (
-          <button
-            key={theme.id}
-            className="text-subtle data-[checked=true]:text-foreground inline-flex h-7 w-7 items-center justify-center transition-colors duration-100 focus-visible:outline-2"
-            type="button"
-            aria-label={`Switch to ${theme.label} theme`}
-            data-id={theme.id}
-          >
-            {theme.icon}
-          </button>
-        )
-      })}
-    </AnimatedBackground>
+      <div
+        className={`size-2 rounded-full ${theme === 'light' ? 'bg-black' : 'bg-white'}`}
+      />
+    </button>
   )
 }

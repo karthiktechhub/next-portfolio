@@ -35,7 +35,7 @@ const TRANSITION_SECTION = {
 export default function Personal() {
   return (
     <motion.main
-      className="space-y-24"
+      className="space-y-16"
       variants={VARIANTS_CONTAINER}
       initial="hidden"
       animate="visible"
@@ -45,14 +45,39 @@ export default function Personal() {
         transition={TRANSITION_SECTION}
       >
         <div className="flex-1">
+          <h3 className="mb-5 text-lg font-medium">About Me</h3>
+          <p className="text-subtle mb-4">
+            I'm a full stack developer with a passion for creating dynamic and
+            responsive web applications.
+          </p>
           <p className="text-subtle">
-            Focused on creating intuitive and performant web experiences.
-            Bridging the gap between design and development.
+            I primarily work with Next.js and Supabase to build scalable and
+            efficient solutions. With a strong background in both front-end and
+            back-end development, I enjoy tackling complex problems and
+            continuously learning new technologies.
           </p>
         </div>
       </motion.section>
 
       <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <div className="flex-1">
+          <h3 className="mb-5 text-lg font-medium">Now</h3>
+          <p className="text-subtle mb-4">
+            I'm currently working as a Programmer Analyst at Cognizant, where I
+            contribute to building robust enterprise solutions using SharePoint.
+          </p>
+          <p className="text-subtle">
+            In my free time, I'm working on building a product feedback
+            marketplace. This platform aims to connect product creators with
+            users to gather valuable feedback and improve their offerings.
+          </p>
+        </div>
+      </motion.section>
+
+      {/* <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
@@ -77,7 +102,7 @@ export default function Personal() {
             </div>
           ))}
         </div>
-      </motion.section>
+      </motion.section> */}
 
       <motion.section
         variants={VARIANTS_SECTION}
@@ -86,18 +111,15 @@ export default function Personal() {
         <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
-            <a
-              className="bg-card-custom/30 relative overflow-hidden rounded-2xl p-[1px]"
-              href={job.link}
-              target="_blank"
-              rel="noopener noreferrer"
+            <div
+              className="relative overflow-hidden rounded-2xl p-[1px]"
               key={job.id}
             >
-              <Spotlight
+              {/* <Spotlight
                 className="from-foreground via-foreground/80 to-foreground/70 blur-2xl"
                 size={64}
-              />
-              <div className="bg-background relative h-full w-full rounded-[15px] p-4">
+              /> */}
+              <div className="bg-background/75 relative h-full w-full rounded-[15px] p-4">
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
                     <h4 className="text-foreground font-normal">{job.title}</h4>
@@ -108,12 +130,12 @@ export default function Personal() {
                   </p>
                 </div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </motion.section>
 
-      <motion.section
+      {/* <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
@@ -121,7 +143,7 @@ export default function Personal() {
         <div className="flex flex-col space-y-0">
           <AnimatedBackground
             enableHover
-            className="bg-card-custom h-full w-full rounded-lg"
+            className="bg-muted/75 h-full w-full rounded-lg"
             transition={{
               type: 'spring',
               bounce: 0,
@@ -143,7 +165,7 @@ export default function Personal() {
             ))}
           </AnimatedBackground>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       <motion.section
         variants={VARIANTS_SECTION}
