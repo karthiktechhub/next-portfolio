@@ -42,7 +42,7 @@ export default function RootLayout({
       <body
         className={`${geist.variable} ${geistMono.variable} bg-background tracking-tight antialiased`}
       >
-        {/* <ConditionalSplashCursor /> */}
+        <ConditionalSplashCursor />
         <Providers>
           <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
             <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
