@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: 'Portfolio Website',
   description:
     "I'm Karthik, a full stack developer. and this is my portfolio website.",
+  icons: {
+    icon: [{ url: 'public/profile.jpeg' }],
+    apple: [{ url: 'public/profile.jpeg' }],
+  },
 }
 
 const geist = Geist({
@@ -38,11 +42,11 @@ export default function RootLayout({
       <body
         className={`${geist.variable} ${geistMono.variable} bg-background tracking-tight antialiased`}
       >
+        {/* <ConditionalSplashCursor /> */}
         <Providers>
           <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
             <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
               <Header />
-              <ConditionalSplashCursor />
               {children}
               <Footer />
             </div>

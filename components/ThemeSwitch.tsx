@@ -28,7 +28,7 @@ export function ThemeSwitch() {
     <button
       aria-label="Toggle theme"
       onClick={toggleTheme}
-      className="bg-background hover:bg-muted h-8 rounded-md px-4 py-0.5 transition-colors duration-200 md:h-5 md:px-2"
+      className="bg-background hover:bg-muted h-8 cursor-pointer rounded-md px-4 py-0.5 transition-colors duration-200 md:h-5 md:px-2"
     >
       <div
         className={`size-2 rounded-full ${theme === 'light' ? 'bg-black' : 'bg-white'}`}

@@ -8,7 +8,7 @@ export function Footer() {
       <div className="flex items-center justify-between">
         <TextLoop className="text-muted-foreground text-xs">
           <span>© 2025 Karthik.</span>
-          <span>Built with Love</span>
+          <span>Built with ❤️</span>
         </TextLoop>
         <div className="">
           <ThemeSwitch />

@@ -97,3 +97,23 @@ export const SOCIAL_LINKS: SocialLink[] = [
 ]
 
 export const EMAIL = 'karthikkhoday29@gmail.com'
+
+export const SKILLS = [
+  { name: 'JavaScript', category: 'language' },
+  { name: 'TypeScript', category: 'language' },
+  { name: 'React', category: 'frontend' },
+  { name: 'Next.js', category: 'frontend' },
+  { name: 'HTML5', category: 'frontend' },
+  { name: 'CSS3', category: 'frontend' },
+  { name: 'Tailwind CSS', category: 'frontend' },
+  { name: 'Shadcn UI', category: 'frontend' },
+  { name: 'Node.js', category: 'backend' },
+  { name: 'PostgreSQL', category: 'database' },
+  { name: 'Supabase', category: 'database' },
+  { name: 'Git', category: 'tools' },
+  { name: 'GitHub', category: 'tools' },
+  { name: 'VS Code', category: 'tools' },
+  { name: 'SharePoint', category: 'tools' },
+  { name: 'Vercel', category: 'deployment' },
+  { name: 'Google Cloud', category: 'deployment' },
+]
