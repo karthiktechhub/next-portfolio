@@ -1,6 +1,6 @@
 'use client'
 
-import { SplashCursor } from './splash-cursor'
+import { DynamicSplashCursor } from './dynamic-splash-cursor'
 import { useMobileDetector } from '@/hooks/use-mobile-detector'
 
 export function ConditionalSplashCursor() {
@@ -10,5 +10,5 @@ export function ConditionalSplashCursor() {
     return null
   }
 
-  return <SplashCursor />
+  return <DynamicSplashCursor />
 }
